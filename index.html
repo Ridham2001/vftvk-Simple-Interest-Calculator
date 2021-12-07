@@ -1,16 +1,51 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <title>Any relevant title you want to give</title>
+        <!-- use defer in script tag so that javascript load after html  -->
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
+            <!-- add extra div to give padding left into data field as per image -->
+            <div class="innerdiv">
+                <!-- add table to aline input fileds on straight line -->
+                <table>
+                    <tr>
+                        <td>Amount</td>
+                        <td>
+                            <input type="number" id="principal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rate</td>
+                        <td>
+                            <input type="range" onchange="updateRate()" min=1 max=20 value=10.25 step=0.25 id="rate">  
+                            <span id="rate_val">10.25%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No. of Years </td>
+                        <td>
+                            <select id="years">
+                                <!-- option will be generate by Javascript for loop -->
+                            </select>  
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                    
+                <button onclick="compute()">Compute Interest</button>
+                <br><br/>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+                <span id="result"></span>
+                <br/>
+            </div>
+            <footer>
+                &#169; Everyone Can Get Rich
+            </footer>
+        </div>
     </body>
 </html>
